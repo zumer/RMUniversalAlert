@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Ryan Maxwell. All rights reserved.
 //
 
-#import <UIAlertView+Blocks/UIAlertView+Blocks.h>
-#import <UIActionSheet+Blocks/UIActionSheet+Blocks.h>
-#import <UIAlertController+Blocks/UIAlertController+Blocks.h>
+#import "UIAlertView+Blocks.h"
+#import "UIActionSheet+Blocks.h"
+#import "UIAlertController+Blocks.h"
 
 #import "RMUniversalAlert.h"
 
@@ -198,9 +198,9 @@ static NSInteger const RMUniversalAlertFirstOtherButtonIndex = 2;
     if (self.alertController) {
         [self.alertController dismissViewControllerAnimated:animated completion:nil];
     } else if (self.alertView) {
-        [self.alertView dismissWithClickedButtonIndex:0 animated:animated];
+        [self.alertView dismissWithClickedButtonIndex:self.alertView.cancelButtonIndex animated:animated];
     } else if (self.actionSheet) {
-        [self.actionSheet dismissWithClickedButtonIndex:0 animated:animated];
+        [self.actionSheet dismissWithClickedButtonIndex:self.actionSheet.cancelButtonIndex animated:animated];
     }
 }
 
